@@ -1,0 +1,15 @@
+{
+  "public": "_site",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/sites/dashboard/SitePages/dhgs"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/sites/dashboard/SitePages/dhgs/**",
+      "destination": "/sites/dashboard/SitePages/dhgs/default.aspx"
+    }
+  ]
+}

@@ -8,12 +8,10 @@ import Registration from "./Registration";
 import ForgotPassword from "./ForgotPassword";
 import "../../../../_metronic/_assets/sass/pages/login/classic/login-1.scss";
 
-export const AuthPage = (props) => {
+export function AuthPage() {
   return (
       <>
-        <div className="d-flex flex-column flex-root"
-          style={{height: '100vh'}}
-        >
+        <div className="d-flex flex-column flex-root">
           {/*begin::Login*/}
           <div
               className="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-row-fluid bg-white"
@@ -23,7 +21,7 @@ export const AuthPage = (props) => {
             <div
                 className="login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10"
                 style={{
-                  backgroundImage: `url(${toAbsoluteUrl("/images/bg-4.jpg")})`
+                  backgroundImage: `url(${toAbsoluteUrl("/media/bg/bg-4.jpg")})`
                 }}
             >
               {/*begin: Aside Container*/}
@@ -33,7 +31,7 @@ export const AuthPage = (props) => {
                   <img
                       alt="Logo"
                       className="max-h-70px"
-                      src={toAbsoluteUrl("/images/logo.png")}
+                      src={toAbsoluteUrl("/media/logos/logo-letter-1.png")}
                   />
                 </Link>
                 {/* end:: Aside header */}
@@ -41,9 +39,11 @@ export const AuthPage = (props) => {
                 {/* start:: Aside content */}
                 <div className="flex-column-fluid d-flex flex-column justify-content-center">
                   <h3 className="font-size-h1 mb-5 text-white">
-                    Welcome to Webike!
+                    Welcome to Metronic!
                   </h3>
-                  <p className="font-weight-lighter text-white opacity-80">We love motorcycle and riders!
+                  <p className="font-weight-lighter text-white opacity-80">
+                    The ultimate Bootstrap & React 16 admin theme framework for next
+                    generation web apps.
                   </p>
                 </div>
                 {/* end:: Aside content */}
@@ -51,7 +51,7 @@ export const AuthPage = (props) => {
                 {/* start:: Aside footer for desktop */}
                 <div className="d-none flex-column-auto d-lg-flex justify-content-between mt-10">
                   <div className="opacity-70 font-weight-bold	text-white">
-                    &copy; 2020 Webike
+                    &copy; 2020 Metronic
                   </div>
                   <div className="d-flex">
                     <Link to="/terms" className="text-white">
@@ -83,7 +83,7 @@ export const AuthPage = (props) => {
               {/* begin::Content body */}
               <div className="d-flex flex-column-fluid flex-center mt-30 mt-lg-0">
                 <Switch>
-                <ContentRoute path="/auth/login" component={() => <Login />}/>
+                <ContentRoute path="/auth/login" component={Login}/>
                 <ContentRoute path="/auth/registration" component={Registration}/>
                 <ContentRoute
                     path="/auth/forgot-password"

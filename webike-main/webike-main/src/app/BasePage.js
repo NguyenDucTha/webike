@@ -2,12 +2,23 @@ import React, {Suspense, lazy} from "react";
 import {Redirect, Switch, Route} from "react-router-dom";
 import {LayoutSplashScreen, ContentRoute} from "../_metronic/layout";
 import {BuilderPage} from "./pages/BuilderPage";
-import {DashboardPage} from './modules/Dashboard/DashboardPage';
-import {DetailPage} from './modules/Detail/DetailPage';
-import {AuthPage} from './modules/Auth/pages/AuthPage';
-import { CartPage } from './modules/Cart/CartPage';
+import {DashboardPage} from './modules/Dashboard/DashboardPage'
+import {DetailPage} from './modules/Detail/DetailPage'
+// const GoogleMaterialPage = lazy(() =>
+//   import("./modules/GoogleMaterialExamples/GoogleMaterialPage")
+// );
+// const ReactBootstrapPage = lazy(() =>
+//   import("./modules/ReactBootstrapExamples/ReactBootstrapPage")
+// );
+// const ECommercePage = lazy(() =>
+//   import("./modules/ECommerce/pages/eCommercePage")
+// );
 
 export default function BasePage() {
+    // useEffect(() => {
+    //   console.log('Base page');
+    // }, []) // [] - is required if you need only one call
+    // https://reactjs.org/docs/hooks-reference.html#useeffect
 
     return (
         <Suspense fallback={<LayoutSplashScreen/>}>
@@ -19,8 +30,6 @@ export default function BasePage() {
                 {/* <ContentRoute path="/dashboard" component={DashboardPage}/> */}
                 <Route path="/home" component={DashboardPage}/>
                 <Route path="/detail" component={DetailPage}/>
-                <Route path="/auth" component={AuthPage} />
-                <Route path="/cart" component={CartPage} />
                 {/* <ContentRoute path="/" component={MapPage}/> */}
                 {/* <Redirect to="error/error-v1"/> */}
                 <Redirect to="error/error-v1" />

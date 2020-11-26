@@ -7,7 +7,7 @@ module.exports = {
   post: (req, res) => {
     var userId = req.body.userId
     var motorId = req.body.motorId
-    var quantity = req.body.quantity
+    var quantity = req.body.quantity  
     sql = 'INSERT INTO cart VALUES(NULL, ?, ?, ?);'
 
     db.query(sql, [userId, motorId, quantity], (err, result) => {

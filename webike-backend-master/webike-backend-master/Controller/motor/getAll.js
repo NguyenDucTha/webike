@@ -4,7 +4,7 @@ var db = require('../../database')
 
 module.exports = {
   get: (req, res) => {
-    sql = 'Select * from motor limit 20;'
+    sql = 'Select * from motor;'
 
     db.query(sql, (err, result) => {
       if (err) throw err

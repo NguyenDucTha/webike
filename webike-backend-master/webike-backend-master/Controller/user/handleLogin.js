@@ -4,16 +4,18 @@ var db = require('../../database')
 
 module.exports = {
   get: (req, res) => {
-    sql = 'Select * from type ;'
+    var userName = req.params.userName
+    var email = req.params.email
+    sql = 'Select * from user where userName = ? or email = ?;'
 
-    db.query(sql, (err, result) => {
+    db.query(sql, [userName, email], (err, result) => {
       if (err) throw err
       else {
         if (result) {
           res.status(200).json(result)
         }
         else {
-          res.status(401).json({ message: 'No exam exists' })
+          res.status(401).json({ message: 'You have no authorized' })
         }
       }
     })

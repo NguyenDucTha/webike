@@ -10,8 +10,6 @@ let getItemByStock = require('./Controller/stockInventory/getItemByStock')
 
 let getType = require('./Controller/type/getType')
 
-let handleLogin = require('./Controller/user/handleLogin')
-
 module.exports = (app) => {
   app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -30,7 +28,7 @@ module.exports = (app) => {
   app.route('/cart/quantity')
     .post(addQuantity.post)
 
-  app.route('/cart/:userId/:motorId')
+  app.route('/cart')
     .delete(deleteCartItem.delete)
 
   app.route('/cart/:userId')
@@ -41,8 +39,5 @@ module.exports = (app) => {
 
   app.route('/type')
     .get(getType.get)
-
-  app.route('/user/:userName/:email')
-    .get(handleLogin.get)
 
 }
